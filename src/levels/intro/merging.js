@@ -5,7 +5,7 @@ exports.level = {
     "en_US": "Merging in Git",
     "de_DE": "Mergen in git",
     "es_AR": "Mergeando en Git",
-    "fr_FR": "Faire des 'merge' (fusions de branches) avec Git",
+    "fr_FR": "Git merge: Fusionner des branches",
     "ko": "Git에서 브랜치 합치기(Merge)",
     "ja": "ブランチとマージ",
     "zh_CN": "分支与合并",
@@ -16,7 +16,7 @@ exports.level = {
     "de_DE": "Denk dran in der angegebenen Reihenfolge zu committen (erst bugFix, dann master)",
     "ja": "指示された順番でコミットすること（masterの前にbugFixで）",
     "es_AR": "Acordate de commitear en el orden especificado (bugFix antes de master)",
-    "fr_FR": "Pensez à faire des commits dans l'ordre indiqué (bugFix avant master)",
+    "fr_FR": "Pensez à faire les commits dans l'ordre indiqué (bugFix avant master)",
     "zh_CN": "记住按指定的顺序提交（bugFix先于master）",
     "zh_TW": "記住按指定的順序 commit（bugFix 比 master 優先）",
     "ko": "말씀드린 순서대로 커밋해주세요 (bugFix에 먼저 커밋하고 master에 커밋)"
@@ -309,11 +309,11 @@ exports.level = {
             "markdowns": [
               "## Branches et Merges",
               "",
-                "Super! Nous savons désormais comment faire des commits et de branches. Maintenant nous devons apprendre comment combiner ensemble les contenus de deux branches différentes. Ceci nous permettra de créer une nouvelle branche, développer une nouvelle fonctionnalité sur cette dernière, puis intégrer cette fonctionnalité en combinant le contenu de cette branche de développement à la branche d'origine(master par exemple).",
+                "Bien! Nous savons désormais comment faire des commits et des branches. Maintenant, nous devons apprendre comment combiner ensemble les contenus de deux branches différentes. Ceci nous permettra de créer une nouvelle branche, de développer une nouvelle fonctionnalité sur cette dernière, et d\'intégrer cette fonctionnalité en combinant le contenu de cette branche de développement à la branche d'origine (master par exemple).",
               "",
-              "La première méthode que nous alons voir pour combiner le conenu de deux branches est `git merge`. Faire un 'merge' en git Git crée un commit spécial qui a deux parents. Un commit avec deux parents indique en susbtance \"Je veux inclure le contenu de ce parent et le conenu de cet autre parent, *et* l'ensemble de leurs parents.\"",
+              "La première méthode que nous allons voir pour combiner le contenu de deux branches est `git merge`. Git crée un commit spécial qui a deux parents. Un commit avec deux parents indique que \"Je veux inclure le contenu de ce parent et le contenu de cet autre parent, *ainsi que* l'ensemble de leurs parents.\"",
               "",
-              "C'est plus facile en visualisant, regardons dans la vue suivante"
+              "Visualisons tout ceci"
             ]
           }
         },
@@ -321,16 +321,16 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Here we have two branches; each has one commit that's unique. This means that neither branch includes the entire set of \"work\" in the repository that we have done. Let's fix that with merge.",
+              "Ici nous avons deux branches; chacune à un commit qui est unique. Cela signifie qu\'aucune des branches n\'inclus l\'entièreté du \"travail\" réalisé dans le dossier. Corrigeons ça par un merge.",
               "",
-              "We will `merge` the branch `bugFix` into `master`"
+              "Nous allons réaliser un `merge` de la branche `bugFix` dans `master`"
             ],
             "afterMarkdowns": [
-              "Woah! See that? First of all, `master` now points to a commit that has two parents. If you follow the arrows upstream from `master`, you will hit every commit along the way to the root. This means that `master` contains all the work in the repository now.",
+              "Ho! Voyez vous? En premier lieu, `master` maintenan pointe vers un commit qui à deux parents. Si vous suivez les fléches If you follow the arrows en amont du `master`, vous rencontrerez chaque commit le long du chemin vers la racine. Cela signifie que `master` contient maintenant tout le travail du dossier.",
               "",
-              "Also, see how the colors of the commits changed? To help with learning, I have included some color coordination. Each branch has a unique color. Each commit turns a color that is the blended combination of all the branches that contain that commit.",
+              "Voyez vous aussi comment les couleurs des commits ont changés? Pour vous aider à apprendre, j\'ai ajouté des couleurs. Chaque branche a une couleur unique. Chaque commit modifie sa couleur qui est une combinaison de  toutes les branches qui contiennent ce commit.",
               "",
-              "So here we see that the `master` branch color is blended into all the commits, but the `bugFix` color is not. Let's fix that..."
+              "Ainsi, nous voyons que la couleur de la branche `master` est la même que tous les commits, excepté pour `bugFix. Corrigeons cela..."
             ],
             "command": "git merge bugFix",
             "beforeCommand": "git checkout -b bugFix; git commit; git checkout master; git commit"
@@ -343,9 +343,9 @@ exports.level = {
               "Faisons un merge  de `master` dans `bugFix`:"
             ],
             "afterMarkdowns": [
-              "Puisque `bugFix` était un descendant de `master`, git n'avait aucun travail à effectuer; il a simplement déplacé `bugFix` au même commit auquel `master` est attaché.",
+              "Etant donné que `bugFix` était un descendant de `master`, git n\'avait aucun travail à effectuer; il a simplement déplacé `bugFix` sur le commit auquel `master` est attaché.",
               "",
-              "Maintenant tous les commits sont de la même couleur, ce qui indique que chaque branche contient tout le contenu du dépôt ! Woohoo!"
+              "Maintenant tous les commits sont de la même couleur, ce qui indique que chacune des branches contient tout le contenu du dépôt ! Yéhé!"
             ],
             "command": "git checkout bugFix; git merge master",
             "beforeCommand": "git checkout -b bugFix; git commit; git checkout master; git commit; git merge bugFix"
@@ -364,7 +364,7 @@ exports.level = {
               "* Faites un nouveau commit",
               "* Fusionnez la branche `bugFix` dans `master` avec `git merge`",
               "",
-              "*Rappelez-vous que vous pouvez à tout moment réafficher ces indications avec \"help level\"!*"
+              "*Rappelez-vous que vous pouvez à tout moment réafficher ces indications avec \"help level\"*"
             ]
           }
         }
